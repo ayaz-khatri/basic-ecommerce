@@ -1,0 +1,122 @@
+/* -------------------------------------------------------------------------- */
+/*                                Custom styles                               */
+/* -------------------------------------------------------------------------- */
+
+
+/* ------------------------ Imports font from Google ------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
+
+
+/* ------------------------------ All selector ------------------------------ */
+*
+{
+    font-family: 'Cabin', Helvetica, sans-serif;
+}
+
+
+/* ---------------------------------- Body ---------------------------------- */
+body 
+{
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    background-color: #FFFAF8;
+}
+
+
+/* ------------------------ Hero image on index page ------------------------ */
+.hero 
+{
+    background-color: #333;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+    background-image: url('../images/hero.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+/* ----------------------------- Navigation Bar ----------------------------- */
+.navbar .nav-item .nav-link::after 
+{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.navbar .nav-item .nav-link:hover::after 
+{
+    width: 100%;
+}
+
+.navbar .nav-item .login-btn:hover::after
+{
+    width: 0;
+}
+
+.navbar-profile-image
+{
+  width: 35px;
+  height: 35px;
+}
+
+.color-white:hover a
+{
+    color: #ffffff !important;
+}
+
+.dropdown-menu a:focus 
+{
+  background-color: #dc3545 !important; 
+}
+
+
+/* ------------------------------- Shadow Box ------------------------------- */
+.box
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* -------------------------- Admin Dashboard icons ------------------------- */
+#dashboard-icons a
+{
+  text-decoration: none;
+}
+
+#dashboard-icons a:hover
+{
+  color: #dc3545 !important;
+  text-decoration: none;
+}
+
+#dashboard-icons img
+{
+  transition: all .2s ease-in-out;
+}
+
+#dashboard-icons img:hover, #dashboard-icons a:hover img
+{
+  transform: scale(1.1);
+}
+
+
+/* -------------------------------- Side bar -------------------------------- */
+.sidebar-link:hover
+{
+  color: #dc3545 !important;
+}
+
+
+/* --------------------------------- Footer --------------------------------- */
+.footer 
+{
+    position: absolute;
+    bottom: 0;
+}
