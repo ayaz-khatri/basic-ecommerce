@@ -3,7 +3,6 @@
 <head>
     <title>Home</title>
     <?php include('../includes/head-contents.php'); ?>
-
 </head>
 <body>
 

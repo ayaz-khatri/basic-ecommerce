@@ -9,7 +9,7 @@ include('../includes/init-session.php');          // start session if it's not a
 $current_page = basename($_SERVER['PHP_SELF']);   // gets the name of current web page
 ?>
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark box">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <div class="container-fluid mx-4 my-1">
     <a class="navbar-brand fw-bold" href="index.php">
       <img src="../images/logo.png" style="width: 32px;" alt="logo" class="me-2">
@@ -39,12 +39,12 @@ $current_page = basename($_SERVER['PHP_SELF']);   // gets the name of current we
         <li class="<?php echo $class; ?>">
           <a class="nav-link <?php echo ($current_page == 'index.php') ? 'active fw-bold' : '' ?>" href="index.php">Home</a>
         </li>
-        <li class="<?php echo $class; ?>">
+        <!-- <li class="<?php echo $class; ?>">
           <a class="nav-link <?php echo ($current_page == 'about.php') ? 'active fw-bold' : '' ?>" href="about.php">About Us</a>
         </li>
         <li class="<?php echo $class; ?>">
           <a class="nav-link <?php echo ($current_page == 'contact.php') ? 'active fw-bold' : '' ?>" href="contact.php">Contact Us</a>
-        </li>
+        </li> -->
         <?php 
         if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
         { ?>

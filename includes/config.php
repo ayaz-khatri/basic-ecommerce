@@ -6,6 +6,6 @@
 
 
 // Define constant for website's name
-define('WEBSITE_NAME', 'Basic E-commerce');
+define('WEBSITE_NAME', 'Basic E-Commerce');
 
 ?>
