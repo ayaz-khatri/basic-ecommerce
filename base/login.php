@@ -1,11 +1,11 @@
 <?php 
 
-include('../includes/init-session.php');                // Start Session
-include('../includes/check-loggedin-user.php');         // Check if user is already loggedin
+include("../includes/init-session.php");                // Start Session
+include("../includes/check-loggedin-user.php");         // Check if user is already loggedin
 
 if(isset($_POST['login']))
 {
-    include('../includes/db-connection.php');           // Database connection
+    include("../includes/db-connection.php");           // Database connection
 
     // Form inputs
     $email = $_POST['email'];
@@ -49,15 +49,15 @@ if(isset($_POST['login']))
             }
             else
             {
-                $_SESSION["error"] = "Password does not match with our records!";
+                $_SESSION['error'] = "Password does not match with our records!";
             }
         }
         else
         {
-            $_SESSION["error"] = "Email not found!";
+            $_SESSION['error'] = "Email not found!";
         }
     }
-    // redirects to login page is something is not right.
+    // redirects to login page if something is not right.
     header("location: login.php"); exit();
 }
 
@@ -67,7 +67,7 @@ if(isset($_POST['login']))
 <html lang="en">
 <head>
     <title>Login</title>
-    <?php include('../includes/head-contents.php'); ?>
+    <?php include("../includes/head-contents.php"); ?>
 </head>
 <body>
 

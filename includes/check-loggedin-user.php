@@ -9,7 +9,7 @@
 		if($_SESSION['userRole'] == 'a')
 		{
             // if user role is admin then redirect to admin home page
-			header("location: admin/index.php"); exit();
+			header("location: ../admin/index.php"); exit();
 		}
 		else
 		{

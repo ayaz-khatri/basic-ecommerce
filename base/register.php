@@ -1,11 +1,11 @@
 <?php 
 
-include('../includes/init-session.php');                // Start Session
-include('../includes/check-loggedin-user.php');         // Check if user is already loggedin
+include("../includes/init-session.php");                // Start Session
+include("../includes/check-loggedin-user.php");         // Check if user is already loggedin
 
 if(isset($_POST['register']))
 {
-    include('../includes/db-connection.php');           // Database connection
+    include("../includes/db-connection.php");           // Database connection
 
     // Form inputs
     $username = $_POST['username'];
@@ -46,7 +46,7 @@ if(isset($_POST['register']))
 
         if($user)
         {
-            $_SESSION["error"] = "Email already exists!";
+            $_SESSION['error'] = "Email already exists!";
         }
         else
         {
@@ -57,16 +57,16 @@ if(isset($_POST['register']))
             $stmt->bind_param("sss", $username, $email, $hashedPassword);
             if ($stmt->execute()) 
             {
-                $_SESSION["success"] = "User created successfully!";
+                $_SESSION['success'] = "User created successfully!";
                 header("location: login.php"); exit();
             }
             else
             {
-                $_SESSION["error"] = "Something went wrong!";
+                $_SESSION['error'] = "Something went wrong!";
             }
         }
     }
-    // redirects to register page is something is not right.
+    // redirects to register page if something is not right.
     header("location: register.php"); exit();
 }
 
@@ -78,7 +78,7 @@ if(isset($_POST['register']))
 <html lang="en">
 <head>
     <title>Register</title>
-    <?php include('../includes/head-contents.php'); ?>
+    <?php include("../includes/head-contents.php"); ?>
 </head>
 <body>
 
@@ -102,11 +102,11 @@ if(isset($_POST['register']))
                         </div>
                         <div class="my-3">
                             <label>Password</label>
-                            <input type="password" class="form-control" name="password"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
+                            <input type="password" class="form-control" name="password"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                         </div>
                         <div class="my-3">
                             <label>Confirm Password</label>
-                            <input type="password" class="form-control" name="confirmPassword" >
+                            <input type="password" class="form-control" name="confirmPassword" required>
                         </div>
                         <div class="my-3">
                             <input type="submit" class="btn btn-danger w-100" name="register" value="Register">

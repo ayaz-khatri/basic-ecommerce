@@ -4,8 +4,8 @@
 /* -------------------------------------------------------------------------- */
 
 
-include('../includes/config.php');                // Website's configuration
-include('../includes/init-session.php');          // start session if it's not already started
+include("../includes/config.php");                // Website's configuration
+include("../includes/init-session.php");          // start session if it's not already started
 $current_page = basename($_SERVER['PHP_SELF']);   // gets the name of current web page
 ?>
 
@@ -25,7 +25,7 @@ $current_page = basename($_SERVER['PHP_SELF']);   // gets the name of current we
       <ul class="navbar-nav w-100">
         <span class="border-end me-2"></span>
         <li class="nav-item mt-2 mb-1">
-          <a class="nav-link <?php echo ($current_page == 'index.php') ? 'active fw-bold' : '' ?>" href="index.php">Home</a>
+          <a class="nav-link <?php echo ($current_page == 'index.php') ? 'active fw-bold' : '' ?>" href="../base/index.php">Home</a>
         </li>
         <?php 
         if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
