@@ -17,7 +17,7 @@ include("../includes/check-if-not-admin.php");          // Check if user is not 
 
     <div class="container my-5">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 my-2">
                 <a href="index.php">
                     <div class="box text-center">
                         <img src="../images/dashboard.png">
@@ -25,7 +25,7 @@ include("../includes/check-if-not-admin.php");          // Check if user is not 
                     </div>
                 </a>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 my-2">
                 <a href="users.php">
                     <div class="box text-center">
                         <img src="../images/users.png">

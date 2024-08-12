@@ -126,12 +126,28 @@ hr
 }
 
 
-/* -------------------------------- Side bar -------------------------------- */
-.sidebar-link:hover
+/* -------------------------------- CRUD table -------------------------------- */
+.crud-table
 {
-  color: #dc3545 !important;
+  min-height: 250px !important;
+  max-height: 500px !important;
 }
 
+.crud-table .action-column
+{
+  min-width: 150px !important;
+}
+
+.crud-table .btn-trash
+{
+  background-color: #dc3545 !important;
+  color:#fff !important;
+}
+
+.crud-table .btn-trash:hover 
+{
+  background-color: #c82333 !important;
+}
 
 /* --------------------------------- Footer --------------------------------- */
 .footer 
