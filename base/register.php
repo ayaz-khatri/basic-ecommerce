@@ -69,10 +69,7 @@ if(isset($_POST['register']))
     // redirects to register page if something is not right.
     header("location: register.php"); exit();
 }
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -94,11 +91,11 @@ if(isset($_POST['register']))
                         <hr>
                         <div class="my-3">
                             <label>Username</label>
-                            <input type="text" class="form-control" name="username" >
+                            <input type="text" class="form-control" name="username" required>
                         </div>
                         <div class="my-3">
                             <label>Email</label>
-                            <input type="email" class="form-control" name="email" >
+                            <input type="email" class="form-control" name="email" required>
                         </div>
                         <div class="my-3">
                             <label>Password</label>
