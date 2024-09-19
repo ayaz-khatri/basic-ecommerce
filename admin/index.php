@@ -13,7 +13,7 @@ include("../includes/check-if-not-admin.php");          // Check if user is not 
 </head>
 <body>
 
-    <?php include("../includes/navbar.php"); ?>
+    <?php include("navbar.php"); ?>
 
     <div class="container my-5">
         <div class="row">

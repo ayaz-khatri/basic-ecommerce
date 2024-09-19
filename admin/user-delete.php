@@ -8,12 +8,12 @@ include("../includes/db-connection.php");               // Database connection
 if (isset($_POST['id']) && filter_var($_POST['id'], FILTER_VALIDATE_INT))  
 {
     // Ensure the ID is an integer
-    $user = (int) $_POST['id'];
+    $userId = (int) $_POST['id'];
 
     // SQL statement to delete
     $sql = "DELETE FROM users WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $user);
+    $stmt->bind_param("i", $userId);
     $stmt->execute();
     
     // Set success message

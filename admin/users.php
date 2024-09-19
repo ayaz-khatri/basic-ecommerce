@@ -14,7 +14,7 @@ include("../includes/db-connection.php");               // Database connection
 </head>
 <body>
 
-    <?php include("../includes/navbar.php"); ?>
+    <?php include("navbar.php"); ?>
     <?php include("../includes/messages.php"); ?>
 
     <div class="container mt-1 mb-5">
