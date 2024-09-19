@@ -38,5 +38,5 @@ VALUES
 (7, 'David Miller', 'david@example.com', 'u', '$2y$10$Cg/BMCRs5/xlBMQzezxX7eHArHN46rtkX60/64n89/4yvi7f/KKbS'),
 (8, 'Eva Wilson', 'eva@example.com', 'u', '$2y$10$Cg/BMCRs5/xlBMQzezxX7eHArHN46rtkX60/64n89/4yvi7f/KKbS'),
 (9, 'Frank Moore', 'frank@example.com', 'u', '$2y$10$Cg/BMCRs5/xlBMQzezxX7eHArHN46rtkX60/64n89/4yvi7f/KKbS'),
-(10, 'Grace Taylor', 'grace@example.com', 'u', '$2y$10$Cg/BMCRs5/xlBMQzezxX7eHArHN46rtkX60/64n89/4yvi7f/KKbS');
+(10, 'Grace Taylor', 'grace@example.com', 'u', '$2y$10$Cg/BMCRs5/xlBMQzezxX7eHArHN46rtkX60/64n89/4yvi7f/KKbS'),
 (11, 'Dolly Kent', 'dolly@example.com', 'u', '$2y$10$Cg/BMCRs5/xlBMQzezxX7eHArHN46rtkX60/64n89/4yvi7f/KKbS');

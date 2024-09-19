@@ -33,7 +33,7 @@ if(isset($_POST['login']))
                 // User's data is stored in SESSION variable if user is authenticated
                 $_SESSION['loggedin'] = true;
                 $_SESSION['userId'] = $user['id'];
-                $_SESSION['userName'] = $user['username'];
+                $_SESSION['username'] = $user['username'];
                 $_SESSION['userEmail'] = $user['email'];
                 $_SESSION['userRole'] = $user['role'];
                 if($user['role'] == 'a')

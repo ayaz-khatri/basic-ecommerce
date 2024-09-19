@@ -15,9 +15,9 @@ include("../includes/db-connection.php");               // Database connection
 <body>
 
     <?php include("../includes/navbar.php"); ?>
+    <?php include("../includes/messages.php"); ?>
 
-    <div class="container my-5">
-        <?php include("../includes/messages.php"); ?>
+    <div class="container mt-1 mb-5">
         <div class="row">
             <div class="box">
                 <div class="row">

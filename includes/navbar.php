@@ -36,7 +36,7 @@ $current_page = basename($_SERVER['PHP_SELF']);   // gets the name of current we
             <img src="<?php echo $img; ?>" class="navbar-profile-image rounded-circle border mt-1">
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="navbarDropdown">
-            <li class="text-center py-2 text-danger fw-bold"><?php echo strtoupper($_SESSION['userName']); ?></li>
+            <li class="text-center py-2 text-danger fw-bold"><?php echo strtoupper($_SESSION['username']); ?></li>
             <li><hr class="dropdown-divider"></li>
             <?php if($_SESSION['userRole'] == 'a'){ ?>
               <li><a class="dropdown-item py-2" href="../admin/index.php"><i class="fa-solid fa-house me-2"></i> Dashboard</a></li>
