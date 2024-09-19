@@ -26,7 +26,6 @@ include("../includes/db-connection.php");               // Database connection
                     </div>
                     <div class="col-4 text-end">
                         <a href="user-create.php" class="btn btn-outline-danger">Add New User</a>
-
                     </div>
                 </div>
                 <hr>
@@ -39,7 +38,7 @@ include("../includes/db-connection.php");               // Database connection
                 $result = $stmt->get_result();
                 if($result->num_rows > 0) { ?>
                 <table class="table table-striped">
-                    <tr>
+                    <tr class="sticky-header">
                         <th>#</th> 
                         <th>Username</th> 
                         <th>Email</th> 
