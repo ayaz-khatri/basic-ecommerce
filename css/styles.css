@@ -9,13 +9,13 @@
 :root {
 
 /* -------------------------------- Black Theme ------------------------------- */
-/* --mainColor: #212529;
+--mainColor: #212529;
 --bodyBackgroundColor: #f8f9fa;
 --buttonHoverColor: #0a0a0a;
 --formControlFocusBorderColor: rgba(33, 37, 41, 0.3);
 --formControlFocusShadowColor: rgba(33, 37, 41, 0.6);
 --navbarBackgroundColor: #000000;
---footerBackgroundColor: #000000; */
+--footerBackgroundColor: #000000;
 
 /* -------------------------------- Sunset Theme ------------------------------- */
 /* --mainColor: #f77f00;
@@ -45,13 +45,13 @@
 --footerBackgroundColor: #661a1a; */
 
 /* ------------------------------- Blue Theme ------------------------------- */
---mainColor: #1d4ed8;
+/* --mainColor: #1d4ed8;
 --bodyBackgroundColor: #ebf5ff;
 --buttonHoverColor: #1e40af;
 --formControlFocusBorderColor: rgba(29, 78, 216, 0.3);
 --formControlFocusShadowColor: rgba(29, 78, 216, 0.6);
 --navbarBackgroundColor: #0a1e3f;
---footerBackgroundColor: #0a1e3f;
+--footerBackgroundColor: #0a1e3f; */
 
   /* ------------------------------- Green Theme ------------------------------ */
   /* --mainColor: #198754;
