@@ -25,7 +25,7 @@ include("../includes/db-connection.php");               // Database connection
                         <h3 class="fw-bold my-0">Users</h3>
                     </div>
                     <div class="col-4 text-end">
-                        <a href="user-create.php" class="btn btn-outline-danger">Add New User</a>
+                        <a href="user-create.php" class="btn btn-outline-danger">Add User</a>
                     </div>
                 </div>
                 <hr>
