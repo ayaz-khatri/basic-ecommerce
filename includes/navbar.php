@@ -27,6 +27,12 @@ $current_page = basename($_SERVER['PHP_SELF']);   // gets the name of current we
         <li class="nav-item mt-2 mb-1">
           <a class="nav-link <?php echo ($current_page == 'index.php') ? 'active fw-bold' : '' ?>" href="../base/index.php">Home</a>
         </li>
+        <li class="nav-item mt-2 mb-1">
+          <a class="nav-link <?php echo ($current_page == 'about.php') ? 'active fw-bold' : '' ?>" href="../base/about.php">About</a>
+        </li>
+        <li class="nav-item mt-2 mb-1">
+          <a class="nav-link <?php echo ($current_page == 'contact.php') ? 'active fw-bold' : '' ?>" href="../base/contact.php">Contact</a>
+        </li>
         <?php 
         if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
         { ?>        
