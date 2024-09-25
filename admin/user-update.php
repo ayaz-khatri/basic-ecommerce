@@ -112,7 +112,7 @@ else
                             <input type="email" class="form-control" name="email" required value="<?php echo $user['email'] ?>">
                         </div>
                         <div class="my-3">
-                            <input type="submit" class="btn btn-danger w-100" name="update" value="Edit user">
+                            <input type="submit" class="btn btn-lg btn-danger w-100" name="update" value="Update">
                         </div>
                     </form>
                 </div>

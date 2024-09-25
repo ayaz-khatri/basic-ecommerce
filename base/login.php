@@ -90,7 +90,7 @@ if(isset($_POST['login']))
                             <input type="password" class="form-control" name="password" required>
                         </div>
                         <div class="my-3">
-                            <input type="submit" class="btn btn-danger w-100" name="login" value="Login">
+                            <input type="submit" class="btn btn-danger btn-lg w-100" name="login" value="Login">
                         </div>
                         <div class="my-3 text-center">
                             <span>Don't have an account?</span>

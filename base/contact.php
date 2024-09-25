@@ -29,7 +29,7 @@
                             <textarea name="message" class="form-control" rows="5"></textarea>
                         </div>
                         <div class="my-3">
-                            <input type="submit" class="btn btn-danger w-100" name="contact" value="Submit">
+                            <input type="submit" class="btn btn-danger btn-lg w-100" name="contact" value="Submit">
                         </div>
                         <div class="my-3 box">
                             <div class="row text-center">

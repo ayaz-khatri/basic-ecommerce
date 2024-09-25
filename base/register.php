@@ -87,7 +87,7 @@ if(isset($_POST['register']))
                 <div class="box">
                     <?php include("../includes/messages.php"); ?>
                     <form action="register.php" method="POST">
-                        <h3 class="fw-bold text-center">Register</h3>
+                        <h3 class="fw-bold text-center">REGISTER</h3>
                         <hr>
                         <div class="my-3">
                             <label>Username</label>
@@ -106,7 +106,7 @@ if(isset($_POST['register']))
                             <input type="password" class="form-control" name="confirmPassword" required>
                         </div>
                         <div class="my-3">
-                            <input type="submit" class="btn btn-danger w-100" name="register" value="Register">
+                            <input type="submit" class="btn btn-danger btn-lg w-100" name="register" value="Register">
                         </div>
                         <div class="my-3 text-center">
                             <span>Already have an account?</span>

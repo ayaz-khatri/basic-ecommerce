@@ -106,7 +106,7 @@ if(isset($_POST['create']))
                             <input type="password" class="form-control" name="confirmPassword" required>
                         </div>
                         <div class="my-3">
-                            <input type="submit" class="btn btn-danger w-100" name="create" value="Add user">
+                            <input type="submit" class="btn btn-lg btn-danger w-100" name="create" value="Add">
                         </div>
                     </form>
                 </div>
