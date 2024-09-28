@@ -67,7 +67,6 @@ include("../includes/db-connection.php");               // Database connection
                 <?php } ?>    
                 </div>
             </div>
-
         </div>
     </div>
 

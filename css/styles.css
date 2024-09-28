@@ -6,7 +6,8 @@
 /* ------------------------ Imports font from Google ------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
 
-:root {
+:root 
+{
 
 /* -------------------------------- Black Theme ------------------------------- */
 --mainColor: #212529;
@@ -251,7 +252,8 @@ hr
   background-color: #c82333 !important;
 }
 
-.crud-table .sticky-header th {
+.crud-table .sticky-header th 
+{
   position: sticky;
   top: 0;
   z-index: 1;
@@ -265,10 +267,19 @@ hr
   bottom: 0;
 }
 
-.footer .social-icon i {
+.footer .social-icon i 
+{
   transition: color 0.3s ease;
 }
 
-.footer .social-icon:hover i {
+.footer .social-icon:hover i 
+{
   color: #ffffff;
+}
+
+/* --------------------------------- Product --------------------------------- */
+.product img
+{
+  width: 350px;
+  height: 270px;
 }
