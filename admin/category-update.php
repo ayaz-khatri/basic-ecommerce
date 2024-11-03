@@ -9,55 +9,49 @@ if(isset($_POST['update']))
 {
     // Form inputs
     $id = $_POST['id'];
-    $username = $_POST['username'];
-    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
     $imageName = $_POST['image'];
     $oldImage = $imageName;
 
-    // Data validation
-    if (empty($id) || empty($username) || empty($email)) 
+    if (empty($name) || empty($description)) 
     {
         $_SESSION['error'] = "Please fill all fields!";
     } 
-    else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
-    {
-        // Check the email format
-        $_SESSION['error'] = "Use correct email format!";
-    } 
     else
     {
-        // SQL query to check if email exists in users table but exclude current user
-        $sql = "SELECT * FROM users WHERE email = ? AND id != ?";
+        // SQL query to check if category exists in categories table but exclude current category
+        $sql = "SELECT * FROM categories WHERE name = ? AND id != ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("si", $email, $id);
+        $stmt->bind_param("si", $name, $id);
         $stmt->execute();
         $result = $stmt->get_result();
-        $user = $result->fetch_assoc();
+        $category = $result->fetch_assoc();
 
-        if($user)
+        if($category)
         {
-            $_SESSION['error'] = "Email already exists!";
+            $_SESSION['error'] = "Category already exists!";
         }
         else
         {
             if (!empty($_FILES['img']['name'])) 
             {
                 // Uploads image to server
-                $imageName = uploadImage($_FILES['img'], "../uploads/", $entityName = "user"); 
+                $imageName = uploadImage($_FILES['img'], "../uploads/", $entityName = "category"); 
                 if($imageName == NULL)
                 {
-                    header("location: user-update.php?id=$id"); exit();
+                    header("location: category-update.php?id=$id"); exit();
                 }      
                 unlink("../uploads/".$oldImage);
             }
-            // Sql query to update user record
-            $sql = "UPDATE users SET username = ?, email = ?, image = ? WHERE id = ?";
+            // Sql query to update category record
+            $sql = "UPDATE categories SET name = ?, description = ?, image = ? WHERE id = ?";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssi", $username, $email, $imageName, $id);
+            $stmt->bind_param("sssi", $name, $description, $imageName, $id);
             if ($stmt->execute()) 
             {
-                $_SESSION['success'] = "User updated successfully!";
-                header("location: users.php"); exit();
+                $_SESSION['success'] = "Category updated successfully!";
+                header("location: categories.php"); exit();
             }
             else
             {
@@ -65,42 +59,42 @@ if(isset($_POST['update']))
             }
         }
     }
-    // redirects to user-create page if something is not right.
-    header("location: user-update.php?id=$id"); exit();
+    // redirects to category-create page if something is not right.
+    header("location: category-update.php?id=$id"); exit();
 }
 
 // Validate and sanitize input
 if (isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT))  
 {
     // Ensure the ID is an integer
-    $userId = (int) $_GET['id'];
+    $categoryId = (int) $_GET['id'];
 
-    // SQL statement to get user record
-    $sql = "SELECT * FROM users WHERE id = ? AND role = 'u'";
+    // SQL statement to get category record
+    $sql = "SELECT * FROM categories WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $userId);
+    $stmt->bind_param("i", $categoryId);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if($result->num_rows == 0)
     {
-        $_SESSION["error"] = "User not found!";
-        header("location: users.php"); exit();      // redirects if record not found
+        $_SESSION["error"] = "Category not found!";
+        header("location: categories.php"); exit();      // redirects if record not found
     }
-    $user = $result->fetch_assoc();
+    $category = $result->fetch_assoc();
 }
 else
 {
     // Set error message
-    $_SESSION["error"] = "Invalid user ID!";
-    header("location: users.php"); exit();      // redirects if Invalid Id
+    $_SESSION["error"] = "Invalid Category ID!";
+    header("location: categories.php"); exit();         // redirects if Invalid Id
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Edit User - <?php echo $user['username'] ?></title>
+    <title>Edit Category - <?php echo $category['name'] ?></title>
     <?php include("../includes/head-contents.php"); ?>
 </head>
 <body>
@@ -112,24 +106,24 @@ else
             <div class="col-md-9">
                 <div class="box">
                     <?php include("../includes/messages.php"); ?>
-                    <form action="user-update.php" method="POST" enctype="multipart/form-data">
-                        <h3 class="fw-bold text-center">Edit User</h3>
+                    <form action="category-update.php" method="POST" enctype="multipart/form-data">
+                        <h3 class="fw-bold text-center">Update Category</h3>
                         <hr>
                         <div class="row">
                             <div class="col-md-4">
-                                <img src="<?php echo !empty($user['image']) ? '../uploads/' . $user['image'] : '../images/placeholder.png'; ?>" class="img img-fluid shadow rounded mt-3 entityImage" id="img">
+                                <img src="<?php echo !empty($category['image']) ? '../uploads/' . $category['image'] : '../images/placeholder.png'; ?>" class="img img-fluid shadow rounded mt-3 entityImage" id="img">
                                 <input type="file" name="img" accept="image/x-png,image/jpeg" id="imageUpload" class="form-control my-3" onchange="previewImage(event)">
                             </div>
                             <div class="col-md-8">
                                 <div class="my-3">
-                                    <label>Username</label>
-                                    <input type="hidden" class="form-control" name="id" required value="<?php echo $user['id'] ?>">
-                                    <input type="hidden" class="form-control" name="image" value="<?php echo $user['image'] ?>" required>
-                                    <input type="text" class="form-control" name="username" required value="<?php echo $user['username'] ?>">
+                                    <label>Category Name</label>
+                                    <input type="hidden" class="form-control" name="id" value="<?php echo $category['id'] ?>" required>
+                                    <input type="hidden" class="form-control" name="image" value="<?php echo $category['image'] ?>" required>
+                                    <input type="text" class="form-control" name="name" value="<?php echo $category['name'] ?>" required>
                                 </div>
                                 <div class="my-3">
-                                    <label>Email</label>
-                                    <input type="email" class="form-control" name="email" required value="<?php echo $user['email'] ?>">
+                                    <label>Description</label>
+                                    <textarea name="description" class="form-control" rows="5" required><?php echo $category['description'] ?></textarea>
                                 </div>
                                 <div class="my-3">
                                     <input type="submit" class="btn btn-lg btn-danger w-100" name="update" value="Update">

@@ -33,6 +33,14 @@ include("../includes/check-if-not-admin.php");          // Check if user is not 
                     </div>
                 </a>
             </div>
+            <div class="col-6 col-md-4 col-lg-3 my-2">
+                <a href="categories.php">
+                    <div class="box text-center">
+                        <img src="../images/categories.png">
+                        <button class="btn btn-danger w-100 my-3">Categories</button>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 

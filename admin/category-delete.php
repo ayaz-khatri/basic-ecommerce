@@ -8,35 +8,35 @@ include("../includes/db-connection.php");               // Database connection
 if (isset($_POST['id']) && filter_var($_POST['id'], FILTER_VALIDATE_INT))  
 {
     // Ensure the ID is an integer
-    $userId = (int) $_POST['id'];
-
-    $sql = "SELECT * FROM users WHERE id = ?";
+    $categoryId = (int) $_POST['id'];
+    
+    $sql = "SELECT * FROM categories WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $userId);
+    $stmt->bind_param("i", $categoryId);
     $stmt->execute();
     $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
+    $category = $result->fetch_assoc();
 
-    if($user['image'] != NULL)
+    if($category['image'] != NULL)
     {
-        unlink("../uploads/".$user['image']);
+        unlink("../uploads/".$category['image']);
     }
 
     // SQL statement to delete
-    $sql = "DELETE FROM users WHERE id = ?";
+    $sql = "DELETE FROM categories WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $userId);
+    $stmt->bind_param("i", $categoryId);
     $stmt->execute();
     
     // Set success message
-    $_SESSION["success"] = "User deleted successfully!";
+    $_SESSION["success"] = "Category deleted successfully!";
 }
 else
 {
     // Set error message
-    $_SESSION["error"] = "Invalid user ID!";
+    $_SESSION["error"] = "Invalid Category ID!";
 }
 
 // Redirect to users page
-header("location: users.php"); exit();
+header("location: categories.php"); exit();
 ?>

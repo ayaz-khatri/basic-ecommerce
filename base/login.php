@@ -36,6 +36,7 @@ if(isset($_POST['login']))
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['userEmail'] = $user['email'];
                 $_SESSION['userRole'] = $user['role'];
+                $_SESSION['userImage'] = $user['image'];
                 if($user['role'] == 'a')
                 {
                     // redirected to admin home page if user's role is admin

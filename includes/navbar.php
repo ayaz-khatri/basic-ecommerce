@@ -38,7 +38,7 @@ $current_page = basename($_SERVER['PHP_SELF']);   // gets the name of current we
         { ?>        
         <li class="nav-item dropdown ms-md-auto" >
           <a class="nav-link login-btn <?php echo ($current_page == 'login.php') ? 'active' : '' ?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">
-            <?php $img = "../images/user.jpg"; ?>
+            <?php $img = !empty($_SESSION['userImage']) ? '../uploads/' . $_SESSION['userImage'] : '../images/user.jpg'; ?>
             <img src="<?php echo $img; ?>" class="navbar-profile-image rounded-circle border mt-1">
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="navbarDropdown">
