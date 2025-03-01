@@ -47,6 +47,9 @@ $current_page = basename($_SERVER['PHP_SELF']);   // gets the name of current we
             <?php if($_SESSION['userRole'] == 'a'){ ?>
               <li><a class="dropdown-item py-2" href="../admin/index.php"><i class="fa-solid fa-house me-2"></i> Dashboard</a></li>
             <?php } ?>
+            <?php if($_SESSION['userRole'] == 'u'){ ?>
+              <li><a class="dropdown-item py-2" href="../user/change-profile.php"><i class="fa-solid fa-user me-2"></i> Change Profile</a></li>
+            <?php } ?>
             <li>
                 <a class="dropdown-item py-2" href="../base/change-password.php"><i class="fa-solid fa-key me-2"></i> Change Password</a>
             </li>
