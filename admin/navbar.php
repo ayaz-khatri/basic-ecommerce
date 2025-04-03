@@ -33,6 +33,9 @@ $current_page = basename($_SERVER['PHP_SELF']);   // gets the name of current we
         <li class="nav-item mt-2 mb-1">
           <a class="nav-link <?php echo ($current_page == 'categories.php') ? 'active fw-bold' : '' ?>" href="categories.php">Categories</a>
         </li>
+        <li class="nav-item mt-2 mb-1">
+          <a class="nav-link <?php echo ($current_page == 'products.php') ? 'active fw-bold' : '' ?>" href="products.php">Products</a>
+        </li>
         <?php 
         if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
         { ?>        

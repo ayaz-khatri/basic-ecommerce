@@ -11,7 +11,7 @@ if (isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT))
     // Ensure the ID is an integer
     $categoryId = (int) $_GET['id'];
 
-    // SQL statement to get user record
+    // SQL statement to get category record
     $sql = "SELECT * FROM categories WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $categoryId);

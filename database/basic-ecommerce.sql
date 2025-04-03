@@ -26,7 +26,19 @@ CREATE TABLE `categories` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 );
 
-
+/* ------------------------------- Products table ------------------------------ */
+CREATE TABLE `products` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `category_id` INT DEFAULT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `description` TEXT NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
+  `stock` INT NOT NULL DEFAULT 0,
+  `is_available` CHAR(1) NOT NULL DEFAULT '1',
+  `image` VARCHAR(255) DEFAULT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT current_timestamp(),
+  FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON DELETE SET NULL
+);
 
 /* -------------------------------------------------------------------------- */
 /*                                  Data Dump                                 */
@@ -49,7 +61,7 @@ VALUES
 (11, 'Henry Kent', 'henry@example.com', 'u', '$2y$10$Cg/BMCRs5/xlBMQzezxX7eHArHN46rtkX60/64n89/4yvi7f/KKbS');
 
 
-
+/* ---------------------------- categories data ---------------------------- */
 INSERT INTO `categories` (`id`, `name`, `description`)
 VALUES
 (1, 'Electronics', 'Devices and gadgets including phones, laptops, and accessories.'),
@@ -57,3 +69,32 @@ VALUES
 (3, 'Home & Kitchen', 'Household items, furniture, and kitchen appliances.'),
 (4, 'Books', 'A wide range of books across different genres.'),
 (5, 'Toys', 'Toys for children of all ages, including educational and recreational toys.');
+
+
+/* ---------------------------- products data ---------------------------- */
+INSERT INTO `products` (`category_id`, `name`, `description`, `price`, `stock`)
+VALUES
+(1, 'Smartphone X', 'Latest smartphone with high-end features.', 699.99, 50),
+(1, 'Laptop Pro 15', 'High-performance laptop for professionals.', 1299.99, 30),
+(1, 'Wireless Earbuds', 'Noise-canceling wireless earbuds.', 199.99, 100),
+(1, 'Gaming Console', 'Next-gen gaming console with 4K support.', 499.99, 20),
+
+(2, 'Mens Leather Jacket', 'Stylish leather jacket for men.', 149.99, 25),
+(2, 'Womens Winter Coat', 'Warm and comfortable winter coat.', 179.99, 35),
+(2, 'Casual T-Shirt', 'Cotton t-shirt available in multiple colors.', 19.99, 80),
+(2, 'Running Shoes', 'Lightweight running shoes for athletes.', 59.99, 60),
+
+(3, 'Air Fryer', 'Healthy cooking with an advanced air fryer.', 129.99, 15),
+(3, 'Coffee Maker', 'Automatic coffee maker with multiple settings.', 79.99, 40),
+(3, 'LED Desk Lamp', 'Adjustable LED lamp with multiple brightness levels.', 39.99, 70),
+(3, 'Vacuum Cleaner', 'High-suction vacuum cleaner for deep cleaning.', 149.99, 25),
+
+(4, 'Mystery Novel', 'Thrilling mystery novel with unexpected twists.', 14.99, 100),
+(4, 'Science Fiction Book', 'An epic sci-fi adventure.', 18.99, 80),
+(4, 'Self-Help Guide', 'Improve your life with practical advice.', 12.99, 90),
+(4, 'History Encyclopedia', 'Comprehensive guide to world history.', 34.99, 30),
+
+(5, 'Building Blocks Set', 'Creative and fun building blocks for kids.', 29.99, 120),
+(5, 'Remote Control Car', 'High-speed RC car for children.', 49.99, 50),
+(5, 'Plush Teddy Bear', 'Soft and cuddly teddy bear.', 19.99, 150),
+(5, 'Educational Puzzle', 'Brain-stimulating puzzle game.', 24.99, 90);

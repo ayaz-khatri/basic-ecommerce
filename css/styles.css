@@ -10,7 +10,7 @@
 {
 
 /* -------------------------------- Black Theme ------------------------------- */
---mainColor: #212529;
+--mainColor: #292321;
 --bodyBackgroundColor: #f8f9fa;
 --buttonHoverColor: #0a0a0a;
 --formControlFocusBorderColor: rgba(33, 37, 41, 0.3);
@@ -207,25 +207,12 @@ hr
 
 
 /* -------------------------- Admin Dashboard icons ------------------------- */
-#dashboard-icons a
-{
-  text-decoration: none;
+.dashboard-icons a:hover .box {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px 2px var(--formControlFocusShadowColor) !important;
 }
 
-#dashboard-icons a:hover
-{
-  color:  var(--mainColor) !important;
-  text-decoration: none;
-}
-
-#dashboard-icons img
-{
-  transition: all .2s ease-in-out;
-}
-
-#dashboard-icons img:hover, #dashboard-icons a:hover img
-{
-  transform: scale(1.1);
+.dashboard-icons a:hover .btn {
+  background-color: var(--buttonHoverColor) !important;
 }
 
 
@@ -241,9 +228,10 @@ hr
   width: 50px;
   height: 50px;
 }
+
 .crud-table .action-column
 {
-  width: 180px !important;
+  white-space: nowrap;
 }
 
 .btn-trash
@@ -287,4 +275,9 @@ hr
 {
   width: 350px;
   height: 270px;
+}
+
+form label
+{
+  color: #6c757d;
 }

@@ -14,7 +14,7 @@ if(isset($_POST['update']))
     $imageName = $_POST['image'];
     $oldImage = $imageName;
 
-    if (empty($name) || empty($description)) 
+    if (empty($id) || empty($name) || empty($description)) 
     {
         $_SESSION['error'] = "Please fill all fields!";
     } 
